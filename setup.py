@@ -8,7 +8,6 @@ from setuptools import setup
 # Library Information
 NAME = 'generate-json-schema'
 VERSION = '0.0.1'
-DESCRIPTION = 'Json Schema Generator'
 AUTHOR = 'Fernando Toledo Moreira'
 AUTHOR_EMAIL = 'fernandotoledomoreira@gmail.com'
 URL = 'https://github.com/fernandotoledomoreira/json-schema-generator'
@@ -24,7 +23,7 @@ def get_readme(fname):
 setup(
     name=NAME,
     version=VERSION,
-    description=DESCRIPTION,
+    description="Json Schema Generator",
     long_description=get_readme('README.rst'),
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
