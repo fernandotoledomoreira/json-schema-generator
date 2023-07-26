@@ -16,15 +16,20 @@ URL = 'https://github.com/fernandotoledomoreira/json-schema-generator'
 PYTHON_REQUIRES = '>=3.6'
 
 # Read the README.rst file to use as long description
-def get_readme(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+try:
+    f = open("README.rst")
+    readme = f.read()
+    f.close()
+except Exception:
+    print("failed to read readme: ignoring...")
+    readme = __doc__
 
 # Configuration of the package using setuptools' setup()
 setup(
     name=NAME,
     version=VERSION,
     description="Json Schema Generator",
-    long_description=get_readme('README.rst'),
+    long_description="\n".join(readme.split("\n")[2:]).lstrip(),
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     url=URL,

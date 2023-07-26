@@ -1,9 +1,6 @@
 Json Schema Generator
 ====================
 
-.. image:: https://img.shields.io/pypi/v/jsonschemagenerator
-   :alt: Release Status
-
 Installation
 ============
 
