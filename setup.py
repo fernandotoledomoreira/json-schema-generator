@@ -7,7 +7,7 @@ from setuptools import setup
 
 # Library Information
 NAME = 'generate-json-schema'
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 AUTHOR = 'Fernando Toledo Moreira'
 AUTHOR_EMAIL = 'fernandotoledomoreira@gmail.com'
 URL = 'https://github.com/fernandotoledomoreira/json-schema-generator'
