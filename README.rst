@@ -8,7 +8,7 @@ To install the Json Schema Generator, use pip:
 
 .. code-block:: bash
 
-    pip install jsonschemagenerator
+    pip install generate-json-schema
 
 Usage
 =====
