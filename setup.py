@@ -6,8 +6,8 @@ import os
 from setuptools import setup
 
 # Library Information
-NAME = 'jsonschemagenerator'
-VERSION = '0.1.0'
+NAME = 'generate-json-schema'
+VERSION = '0.0.1'
 DESCRIPTION = 'A Python library for generating JSON schemas from JSON data.'
 AUTHOR = 'Fernando Toledo Moreira'
 AUTHOR_EMAIL = 'fernandotoledomoreira@gmail.com'
