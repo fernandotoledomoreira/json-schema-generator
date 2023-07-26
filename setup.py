@@ -10,8 +10,8 @@ NAME = 'jsonschemagenerator'
 VERSION = '0.1.0'
 DESCRIPTION = 'A Python library for generating JSON schemas from JSON data.'
 AUTHOR = 'Fernando Toledo Moreira'
-AUTHOR_EMAIL = ''
-URL = ''
+AUTHOR_EMAIL = 'fernandotoledomoreira@gmail.com'
+URL = 'https://github.com/fernandotoledomoreira/json-schema-generator'
 
 # Minimum Python version required for the library
 PYTHON_REQUIRES = '>=3.6'
