@@ -1,5 +1,5 @@
 Json Schema Generator
-====================
+=====================
 
 Installation
 ============
