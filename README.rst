@@ -1,21 +1,25 @@
 Json Schema Generator
 ====================
+
 .. image:: https://img.shields.io/pypi/v/jsonschemagenerator
-        :alt: Release Status
+   :alt: Release Status
 
 Installation
-======================
+============
 
-.. code:: bash
+To install the Json Schema Generator, use pip:
 
-    $ pip install jsonschemagenerator
+.. code-block:: bash
 
+    pip install jsonschemagenerator
 
 Usage
-======================
+=====
 
-.. code:: python
+To use the Json Schema Generator, import the module and utilize the function `generate_json_schema`:
 
-    $ # use the path of the directory already within your project
-    $ from json_schema_converter.generate_schema import generate_json_schema
-    $ schema = generate_json_schema("/pytests/schemas/teste.json")
+.. code-block:: python
+
+    # Use the path of the directory already within your project
+    from json_schema_converter.generate_schema import generate_json_schema
+    schema = generate_json_schema("/pytests/schemas/teste.json")
