@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  ACTIONS_GIT_TOKEN: ${{ secrets.ACTIONS_GIT_TOKEN }}
 
 jobs:
   create_tag:
@@ -56,4 +56,4 @@ jobs:
           draft: false
           prerelease: false
         env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACTIONS_GIT_TOKEN }}
