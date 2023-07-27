@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  ACTIONS_GIT_TOKEN: ${{ secrets.ACTIONS_GIT_TOKEN }}
+  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 jobs:
   create_tag:
@@ -44,16 +44,8 @@ jobs:
           git tag $TAG
 
       - name: Push tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
           TAG=${{ steps.next_tag.outputs.next_tag }}
           git push origin $TAG
-
-      - name: Create release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ steps.next_tag.outputs.next_tag }}
-          release_name: Release ${{ steps.next_tag.outputs.next_tag }}
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_GIT_TOKEN }}
