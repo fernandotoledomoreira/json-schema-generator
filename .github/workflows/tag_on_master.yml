@@ -38,14 +38,16 @@ jobs:
           
           echo "::set-output name=next_tag::$next_tag"
 
-      - name: Configure Git
-        run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          git config --global credential.helper '!f() { sleep 1; echo "username=github-actions[bot]"; echo "password=${ACCESS_TOKEN}"; }; f'
-
       - name: Create tag
         run: |
           TAG=${{ steps.next_tag.outputs.next_tag }}
           git tag $TAG
-          git push origin $TAG
+
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ''
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          TAG_NAME: ${{ steps.next_tag.outputs.next_tag }}
+          BODY: 'Release ${{ steps.next_tag.outputs.next_tag }}'
