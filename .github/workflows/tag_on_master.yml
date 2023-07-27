@@ -43,11 +43,17 @@ jobs:
           TAG=${{ steps.next_tag.outputs.next_tag }}
           git tag $TAG
 
+      - name: Push tag
+        run: |
+          TAG=${{ steps.next_tag.outputs.next_tag }}
+          git push origin $TAG
+
       - name: Create release
-        uses: softprops/action-gh-release@v1
+        uses: actions/create-release@v1
         with:
-          files: ''
+          tag_name: ${{ steps.next_tag.outputs.next_tag }}
+          release_name: Release ${{ steps.next_tag.outputs.next_tag }}
+          draft: false
+          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TAG_NAME: ${{ steps.next_tag.outputs.next_tag }}
-          BODY: 'Release ${{ steps.next_tag.outputs.next_tag }}'
