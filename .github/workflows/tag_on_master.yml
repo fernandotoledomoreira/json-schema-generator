@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+env:
+  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
 jobs:
   create_tag:
     runs-on: ubuntu-latest
@@ -39,4 +42,4 @@ jobs:
         run: |
           TAG=${{ steps.next_tag.outputs.next_tag }}
           git tag $TAG
-          git push origin $TAG
+          git push origin $TAG --quiet --follow-tags
