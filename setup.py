@@ -4,16 +4,30 @@
 
 import os
 from setuptools import setup
+import requests
 
 # Library Information
 NAME = 'generate-json-schema'
-VERSION = '0.1.3'
 AUTHOR = 'Fernando Toledo Moreira'
 AUTHOR_EMAIL = 'fernandotoledomoreira@gmail.com'
 URL = 'https://github.com/fernandotoledomoreira/json-schema-generator'
 
 # Minimum Python version required for the library
 PYTHON_REQUIRES = '>=3.6'
+
+# Get Tag from GitHub
+def get_latest_version():
+    try:
+        url = 'https://api.github.com/repos/fernandotoledomoreira/json-schema-generator/releases/latest'
+        response = requests.get(url)
+        response.raise_for_status()  # Verifica se a resposta foi bem-sucedida
+        data = response.json()
+        return data['tag_name']
+    except Exception as e:
+        print(f"Erro ao obter a versão do GitHub: {e}")
+        return VERSION
+
+VERSION = get_latest_version()
 
 # Read the README.rst file to use as long description
 try:
